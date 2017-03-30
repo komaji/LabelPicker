@@ -49,7 +49,7 @@
 		2B10ECEF1E8D48600099FE46 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B10ECF31E8D48600099FE46 /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
 		2B10ECF51E8D48600099FE46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B10ED011E8D49210099FE46 /* PickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerComponent.swift; sourceTree = "<group>"; };
+		2B10ED011E8D49210099FE46 /* PickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerComponent.swift; path = ../../LabelPicker/PickerComponent.swift; sourceTree = "<group>"; };
 		2B10ED031E8D4C260099FE46 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerView.swift; path = ../../LabelPicker/PickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

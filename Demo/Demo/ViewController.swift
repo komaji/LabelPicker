@@ -9,17 +9,47 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBOutlet weak var pickerView: PickerView! {
+        didSet {
+            pickerView.components = components
+            pickerView.rowHeight = 30.0
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
+    let components: [PickerComponent] = {
+        let items = (1...100).map { "\($0)" }
+        let attributes = [
+            NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)
+        ]
+        
+        return [
+            PickerComponent(
+                items: items,
+                itemAttributes: attributes,
+                label: "hours",
+                labelAttributes: attributes,
+                maxItemWidth: 30.0,
+                labelWidth: 50.0
+            ),
+            PickerComponent(
+                items: items,
+                itemAttributes: attributes,
+                label: "min",
+                labelAttributes: attributes,
+                maxItemWidth: 30.0,
+                labelWidth: 30.0
+            ),
+            PickerComponent(
+                items: items,
+                itemAttributes: attributes,
+                label: "sec",
+                labelAttributes: attributes,
+                maxItemWidth: 30.0,
+                labelWidth: 30.0
+            ),
+        ]
+    }()
+    
 }
 

@@ -21,22 +21,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-pa-MtO" customClass="PickerView" customModule="Demo" customModuleProvider="target">
-                                <rect key="frame" x="27.5" y="225" width="320" height="216"/>
-                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="C3P-qD-PWU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xki-dz-pQA">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="323.5"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-pa-MtO" customClass="PickerView" customModule="Demo" customModuleProvider="target">
+                                                <rect key="frame" x="27.5" y="54" width="320" height="216"/>
+                                            </pickerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Dda-pa-MtO" firstAttribute="centerX" secondItem="xki-dz-pQA" secondAttribute="centerX" id="eBG-hu-iGm"/>
+                                            <constraint firstItem="Dda-pa-MtO" firstAttribute="centerY" secondItem="xki-dz-pQA" secondAttribute="centerY" id="eT1-hz-MPN"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgu-nw-2cl">
+                                        <rect key="frame" x="0.0" y="323.5" width="375" height="323.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEC-xs-jgl">
+                                                <rect key="frame" x="27" y="54" width="320" height="216"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="dEC-xs-jgl" firstAttribute="centerY" secondItem="vgu-nw-2cl" secondAttribute="centerY" id="NSr-1S-PwX"/>
+                                            <constraint firstItem="dEC-xs-jgl" firstAttribute="centerX" secondItem="vgu-nw-2cl" secondAttribute="centerX" id="nAl-3Z-fen"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Dda-pa-MtO" firstAttribute="width" secondItem="dEC-xs-jgl" secondAttribute="width" id="3RP-TF-wxQ"/>
+                                    <constraint firstItem="Dda-pa-MtO" firstAttribute="height" secondItem="dEC-xs-jgl" secondAttribute="height" id="DDZ-Q4-NSW"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Dda-pa-MtO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B6Z-Ef-7qx"/>
-                            <constraint firstItem="Dda-pa-MtO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ipr-iI-hav"/>
+                            <constraint firstItem="C3P-qD-PWU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="05C-yx-zDy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="C3P-qD-PWU" secondAttribute="bottom" id="ln5-Vd-Zid"/>
+                            <constraint firstAttribute="trailing" secondItem="C3P-qD-PWU" secondAttribute="trailing" id="me6-oP-FGb"/>
+                            <constraint firstItem="C3P-qD-PWU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zmU-9s-26r"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pickerFrameView" destination="dEC-xs-jgl" id="PK6-Om-q7A"/>
                         <outlet property="pickerView" destination="Dda-pa-MtO" id="UUO-5P-W1h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="113.79310344827587"/>
         </scene>
     </scenes>
 </document>

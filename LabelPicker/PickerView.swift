@@ -41,13 +41,6 @@ public class PickerView: UIPickerView {
         self.delegate = self
     }
     
-    public convenience init(frame: CGRect, components: [PickerComponent], rowHeight: CGFloat) {
-        self.init(frame: frame)
-        
-        self.components = components
-        self.rowHeight = rowHeight
-    }
-    
     fileprivate var labels: [UILabel] = []
     
     fileprivate let separateWidth: CGFloat = 5.0

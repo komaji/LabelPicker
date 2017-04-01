@@ -17,7 +17,6 @@ public struct PickerComponent {
     public let labelAttributes: [String: Any]
     public let maxItemWidth: CGFloat
     public let labelWidth: CGFloat
-    public let widthRelativeRatio: Double
     
     public var defaultWidth: CGFloat {
         return maxItemWidth + labelWidth
@@ -27,14 +26,13 @@ public struct PickerComponent {
         return NSAttributedString(string: label, attributes: labelAttributes)
     }
     
-    public init(items: [String], itemAttributes: [String: Any], label: String, labelAttributes: [String: Any],  maxItemWidth: CGFloat, labelWidth: CGFloat, widthRelativeRatio: Double = 1.0) {
+    public init(items: [String], itemAttributes: [String: Any], label: String, labelAttributes: [String: Any],  maxItemWidth: CGFloat, labelWidth: CGFloat) {
         self.items = items
         self.itemAttributes = itemAttributes
         self.label = label
         self.labelAttributes = labelAttributes
         self.maxItemWidth = maxItemWidth
         self.labelWidth = labelWidth
-        self.widthRelativeRatio = widthRelativeRatio
     }
     
     public func attributedItem(index: Int) -> NSAttributedString {

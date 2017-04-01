@@ -13,7 +13,7 @@ public class PickerView: UIPickerView {
     public var components: [PickerComponent] = [] {
         didSet {
             setLabels()
-            if rowHeight != .leastNormalMagnitude {
+            if existRequiredValues {
                 updateLabelFrame()
             }
         }
@@ -21,7 +21,15 @@ public class PickerView: UIPickerView {
     
     public var rowHeight: CGFloat = .leastNormalMagnitude {
         didSet {
-            if !components.isEmpty {
+            if existRequiredValues {
+                updateLabelFrame()
+            }
+        }
+    }
+    
+    public var componentsWidthEqual: Bool = true {
+        didSet {
+            if existRequiredValues {
                 updateLabelFrame()
             }
         }
@@ -41,6 +49,10 @@ public class PickerView: UIPickerView {
         self.delegate = self
     }
     
+    fileprivate var existRequiredValues: Bool {
+        return !components.isEmpty && rowHeight != .leastNormalMagnitude
+    }
+    
     fileprivate var labels: [UILabel] = []
     
     fileprivate let separateWidth: CGFloat = 5.0
@@ -49,26 +61,44 @@ public class PickerView: UIPickerView {
         return components.count - 1
     }
     
-    fileprivate var componentRelativeRatioSum: Double {
-        return components.map { $0.widthRelativeRatio }.reduce(0, +)
+    fileprivate var componentsWidthSum: CGFloat {
+        return bounds.width - separateWidth * CGFloat(separeteCount)
     }
     
-    fileprivate func componentWidthRetio(of component: PickerComponent) -> Double {
-        return component.widthRelativeRatio / componentRelativeRatioSum
+    fileprivate var componentsDefaultWidthSum: CGFloat {
+        return components.map { $0.defaultWidth }.reduce(0.0, +)
+    }
+    
+    fileprivate var componentsMarginSum: CGFloat {
+        return componentsWidthSum - componentsDefaultWidthSum
+    }
+    
+    fileprivate func componentMarginSum(of component: PickerComponent) -> CGFloat {
+        if componentsWidthEqual {
+            return componentWidth(of: component) - component.defaultWidth
+        } else {
+            return componentsMarginSum / CGFloat(components.count)
+        }
+    }
+    
+    fileprivate func componentSideMargin(of component: PickerComponent) -> CGFloat {
+        return componentMarginSum(of: component) / 2.0
     }
     
     fileprivate func componentWidth(of component: PickerComponent) -> CGFloat {
-        return (bounds.width - separateWidth * CGFloat(separeteCount))
-            * CGFloat(componentWidthRetio(of: component))
+        if componentsWidthEqual {
+            return componentsWidthSum / CGFloat(components.count)
+        } else {
+            return component.defaultWidth + componentMarginSum(of: component)
+        }
     }
     
     fileprivate func componentItemViewWidth(of component: PickerComponent) -> CGFloat {
-        return componentWidth(of: component) / 2.0
-            + (component.maxItemWidth - component.defaultWidth / 2.0)
+        return componentSideMargin(of: component) + component.maxItemWidth
     }
     
     fileprivate func componentLabelWidth(of component: PickerComponent) -> CGFloat {
-        return componentWidth(of: component) - componentItemViewWidth(of: component)
+        return component.labelWidth + componentSideMargin(of: component)
     }
     
     fileprivate func setLabels() {

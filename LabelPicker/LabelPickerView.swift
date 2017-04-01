@@ -1,6 +1,6 @@
 //
-//  PickerView.swift
-//  Demo
+//  LabelPickerView.swift
+//  LabelPicker
 //
 //  Created by KojimaTatsuya on 2017/03/30.
 //  Copyright © 2017年 komaji. All rights reserved.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class PickerView: UIPickerView {
+public class LabelPickerView: UIPickerView {
         
     let separateWidth: CGFloat = 5.0
     
-    public var components: [PickerComponent] = [] {
+    public var components: [LabelPickerComponent] = [] {
         didSet {
             setLabels()
             if existRequiredValues {
@@ -73,7 +73,7 @@ public class PickerView: UIPickerView {
         self.delegate = self
     }
     
-    func componentSidePaddingSum(of component: PickerComponent) -> CGFloat {
+    func componentSidePaddingSum(of component: LabelPickerComponent) -> CGFloat {
         if componentsWidthEqual {
             return componentWidth(of: component) - component.maxContentWidth
         } else {
@@ -81,11 +81,11 @@ public class PickerView: UIPickerView {
         }
     }
     
-    func componentSidePadding(of component: PickerComponent) -> CGFloat {
+    func componentSidePadding(of component: LabelPickerComponent) -> CGFloat {
         return componentSidePaddingSum(of: component) / 2.0
     }
     
-    func componentWidth(of component: PickerComponent) -> CGFloat {
+    func componentWidth(of component: LabelPickerComponent) -> CGFloat {
         if componentsWidthEqual {
             return componentsWidthSum / CGFloat(components.count)
         } else {
@@ -128,7 +128,7 @@ public class PickerView: UIPickerView {
     
 }
 
-extension PickerView: UIPickerViewDataSource {
+extension LabelPickerView: UIPickerViewDataSource {
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return components.count
@@ -148,7 +148,7 @@ extension PickerView: UIPickerViewDataSource {
     
 }
 
-extension PickerView: UIPickerViewDelegate {
+extension LabelPickerView: UIPickerViewDelegate {
     
     public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         if let reusingView = view, let reusingItemLable = reusingView.subviews.first as? UILabel {
@@ -168,7 +168,7 @@ extension PickerView: UIPickerViewDelegate {
         return componentView
     }
     
-    func itemLabelFrame(of component: PickerComponent) -> CGRect {
+    func itemLabelFrame(of component: LabelPickerComponent) -> CGRect {
         return CGRect(x: componentSidePadding(of: component), y: 0.0, width: component.maxItemWidth, height: rowHeight)
     }
     

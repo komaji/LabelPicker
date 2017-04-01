@@ -10,8 +10,8 @@
 		2B10ECB71E8D47860099FE46 /* LabelPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B10ECAD1E8D47860099FE46 /* LabelPicker.framework */; };
 		2B10ECBC1E8D47860099FE46 /* LabelPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ECBB1E8D47860099FE46 /* LabelPickerTests.swift */; };
 		2B10ECBE1E8D47860099FE46 /* LabelPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B10ECB01E8D47860099FE46 /* LabelPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B10ED441E8D63030099FE46 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED431E8D63030099FE46 /* PickerView.swift */; };
-		2B10ED461E8D630D0099FE46 /* PickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED451E8D630D0099FE46 /* PickerComponent.swift */; };
+		2B10ED441E8D63030099FE46 /* LabelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED431E8D63030099FE46 /* LabelPickerView.swift */; };
+		2B10ED461E8D630D0099FE46 /* LabelPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED451E8D630D0099FE46 /* LabelPickerComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +31,8 @@
 		2B10ECB61E8D47860099FE46 /* LabelPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabelPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B10ECBB1E8D47860099FE46 /* LabelPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPickerTests.swift; sourceTree = "<group>"; };
 		2B10ECBD1E8D47860099FE46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B10ED431E8D63030099FE46 /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
-		2B10ED451E8D630D0099FE46 /* PickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerComponent.swift; sourceTree = "<group>"; };
+		2B10ED431E8D63030099FE46 /* LabelPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerView.swift; sourceTree = "<group>"; };
+		2B10ED451E8D630D0099FE46 /* LabelPickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +77,8 @@
 			children = (
 				2B10ECB01E8D47860099FE46 /* LabelPicker.h */,
 				2B10ECB11E8D47860099FE46 /* Info.plist */,
-				2B10ED431E8D63030099FE46 /* PickerView.swift */,
-				2B10ED451E8D630D0099FE46 /* PickerComponent.swift */,
+				2B10ED431E8D63030099FE46 /* LabelPickerView.swift */,
+				2B10ED451E8D630D0099FE46 /* LabelPickerComponent.swift */,
 			);
 			path = LabelPicker;
 			sourceTree = "<group>";
@@ -205,8 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B10ED441E8D63030099FE46 /* PickerView.swift in Sources */,
-				2B10ED461E8D630D0099FE46 /* PickerComponent.swift in Sources */,
+				2B10ED441E8D63030099FE46 /* LabelPickerView.swift in Sources */,
+				2B10ED461E8D630D0099FE46 /* LabelPickerComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

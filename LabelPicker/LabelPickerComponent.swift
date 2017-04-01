@@ -1,6 +1,6 @@
 //
-//  PickerComponent.swift
-//  Demo
+//  LabelPickerComponent.swift
+//  LabelPicker
 //
 //  Created by KojimaTatsuya on 2017/03/30.
 //  Copyright © 2017年 komaji. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct PickerComponent {
+public struct LabelPickerComponent {
     
     public let items: [String]
     public let itemAttributes: [String: Any]

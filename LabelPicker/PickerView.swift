@@ -93,19 +93,11 @@ public class PickerView: UIPickerView {
         }
     }
     
-    fileprivate func componentItemViewWidth(of component: PickerComponent) -> CGFloat {
-        return componentSidePadding(of: component) + component.maxItemWidth
-    }
-    
-    fileprivate func componentLabelWidth(of component: PickerComponent) -> CGFloat {
-        return component.labelNameWidth + componentSidePadding(of: component)
-    }
-    
     fileprivate func setLabels() {
         labels = components.enumerated().map { index, component in
             let label = UILabel()
             label.attributedText = component.attributedLabel
-            label.textAlignment = .left
+            label.textAlignment = .center
             
             return label
         }
@@ -131,11 +123,12 @@ public class PickerView: UIPickerView {
     
     fileprivate func labelFrame(withComponentIndex index: Int) -> CGRect {
         let x = leftComponentsWidth(withComponentIndex: index)
-            + componentItemViewWidth(of: components[index])
-            + separateWidth * CGFloat(index)
+                + componentSidePadding(of: components[index])
+                + components[index].maxItemWidth
+                + separateWidth * CGFloat(index)
         let y = bounds.height / 2.0 - rowHeight / 2.0
         
-        return CGRect(x: x, y: y, width: componentLabelWidth(of: components[index]), height: rowHeight)
+        return CGRect(x: x, y: y, width: components[index].labelNameWidth, height: rowHeight)
     }
     
 }
@@ -169,33 +162,19 @@ extension PickerView: UIPickerViewDelegate {
             return reusingView
         }
         
-        let pickerComponent = components[component]
-        
-        let componentView = UIView()
-        let itemView = UIView()
         let itemLabel = UILabel()
-        
-        itemView.frame = itemViewFrame(of: pickerComponent)
-        
-        itemLabel.frame = itemLabelFrame(of: pickerComponent)
+        itemLabel.frame = itemLabelFrame(of: components[component])
         itemLabel.attributedText = components[component].attributedItem(index: row)
         itemLabel.textAlignment = .center
         
-        componentView.addSubview(itemView)
-        itemView.addSubview(itemLabel)
+        let componentView = UIView()
+        componentView.addSubview(itemLabel)
         
         return componentView
     }
     
-    private func itemViewFrame(of component: PickerComponent) -> CGRect {
-        return CGRect(x: 0.0, y: 0.0, width: componentItemViewWidth(of: component), height: rowHeight)
-    }
-    
     private func itemLabelFrame(of component: PickerComponent) -> CGRect {
-        let maxItemWidth = component.maxItemWidth
-        let x = componentItemViewWidth(of: component) - maxItemWidth
-        
-        return CGRect(x: x, y: 0.0, width: maxItemWidth, height: rowHeight)
+        return CGRect(x: componentSidePadding(of: component), y: 0.0, width: component.maxItemWidth, height: rowHeight)
     }
     
 }

@@ -27,7 +27,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xki-dz-pQA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="323.5"/>
                                         <subviews>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-pa-MtO" customClass="PickerView" customModule="Demo" customModuleProvider="target">
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-pa-MtO" customClass="LabelPickerView" customModule="Demo" customModuleProvider="target">
                                                 <rect key="frame" x="27.5" y="54" width="320" height="216"/>
                                             </pickerView>
                                         </subviews>

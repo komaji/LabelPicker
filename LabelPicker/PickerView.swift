@@ -65,40 +65,40 @@ public class PickerView: UIPickerView {
         return bounds.width - separateWidth * CGFloat(separeteCount)
     }
     
-    fileprivate var componentsDefaultWidthSum: CGFloat {
-        return components.map { $0.defaultWidth }.reduce(0.0, +)
+    fileprivate var componentsMaxContentWidthSum: CGFloat {
+        return components.map { $0.maxContentWidth }.reduce(0.0, +)
     }
     
-    fileprivate var componentsMarginSum: CGFloat {
-        return componentsWidthSum - componentsDefaultWidthSum
+    fileprivate var componentsSidePaddingSum: CGFloat {
+        return componentsWidthSum - componentsMaxContentWidthSum
     }
     
-    fileprivate func componentMarginSum(of component: PickerComponent) -> CGFloat {
+    fileprivate func componentSidePaddingSum(of component: PickerComponent) -> CGFloat {
         if componentsWidthEqual {
-            return componentWidth(of: component) - component.defaultWidth
+            return componentWidth(of: component) - component.maxContentWidth
         } else {
-            return componentsMarginSum / CGFloat(components.count)
+            return componentsSidePaddingSum / CGFloat(components.count)
         }
     }
     
-    fileprivate func componentSideMargin(of component: PickerComponent) -> CGFloat {
-        return componentMarginSum(of: component) / 2.0
+    fileprivate func componentSidePadding(of component: PickerComponent) -> CGFloat {
+        return componentSidePaddingSum(of: component) / 2.0
     }
     
     fileprivate func componentWidth(of component: PickerComponent) -> CGFloat {
         if componentsWidthEqual {
             return componentsWidthSum / CGFloat(components.count)
         } else {
-            return component.defaultWidth + componentMarginSum(of: component)
+            return component.maxContentWidth + componentSidePaddingSum(of: component)
         }
     }
     
     fileprivate func componentItemViewWidth(of component: PickerComponent) -> CGFloat {
-        return componentSideMargin(of: component) + component.maxItemWidth
+        return componentSidePadding(of: component) + component.maxItemWidth
     }
     
     fileprivate func componentLabelWidth(of component: PickerComponent) -> CGFloat {
-        return component.labelWidth + componentSideMargin(of: component)
+        return component.labelNameWidth + componentSidePadding(of: component)
     }
     
     fileprivate func setLabels() {
@@ -119,7 +119,7 @@ public class PickerView: UIPickerView {
         }
     }
     
-    fileprivate func leftComponentWidth(withComponentIndex index: Int) -> CGFloat {
+    fileprivate func leftComponentsWidth(withComponentIndex index: Int) -> CGFloat {
         var widthSum: CGFloat = 0.0
         
         for i in 0..<index {
@@ -130,7 +130,7 @@ public class PickerView: UIPickerView {
     }
     
     fileprivate func labelFrame(withComponentIndex index: Int) -> CGRect {
-        let x = leftComponentWidth(withComponentIndex: index)
+        let x = leftComponentsWidth(withComponentIndex: index)
             + componentItemViewWidth(of: components[index])
             + separateWidth * CGFloat(index)
         let y = bounds.height / 2.0 - rowHeight / 2.0

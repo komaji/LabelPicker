@@ -13,26 +13,26 @@ public struct PickerComponent {
     
     public let items: [String]
     public let itemAttributes: [String: Any]
-    public let label: String
+    public let labelName: String
     public let labelAttributes: [String: Any]
     public let maxItemWidth: CGFloat
-    public let labelWidth: CGFloat
+    public let labelNameWidth: CGFloat
     
-    public var defaultWidth: CGFloat {
-        return maxItemWidth + labelWidth
+    public var maxContentWidth: CGFloat {
+        return maxItemWidth + labelNameWidth
     }
     
     public var attributedLabel: NSAttributedString {
-        return NSAttributedString(string: label, attributes: labelAttributes)
+        return NSAttributedString(string: labelName, attributes: labelAttributes)
     }
     
-    public init(items: [String], itemAttributes: [String: Any], label: String, labelAttributes: [String: Any],  maxItemWidth: CGFloat, labelWidth: CGFloat) {
+    public init(items: [String], itemAttributes: [String: Any], labelName: String, labelAttributes: [String: Any],  maxItemWidth: CGFloat, labelNameWidth: CGFloat) {
         self.items = items
         self.itemAttributes = itemAttributes
-        self.label = label
+        self.labelName = labelName
         self.labelAttributes = labelAttributes
         self.maxItemWidth = maxItemWidth
-        self.labelWidth = labelWidth
+        self.labelNameWidth = labelNameWidth
     }
     
     public func attributedItem(index: Int) -> NSAttributedString {

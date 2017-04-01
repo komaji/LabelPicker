@@ -9,12 +9,14 @@
 import UIKit
 
 public class PickerView: UIPickerView {
+        
+    let separateWidth: CGFloat = 5.0
     
     public var components: [PickerComponent] = [] {
         didSet {
             setLabels()
             if existRequiredValues {
-                updateLabelFrame()
+                updateLabelsFrame()
             }
         }
     }
@@ -22,7 +24,7 @@ public class PickerView: UIPickerView {
     public var rowHeight: CGFloat = .leastNormalMagnitude {
         didSet {
             if existRequiredValues {
-                updateLabelFrame()
+                updateLabelsFrame()
             }
         }
     }
@@ -30,32 +32,16 @@ public class PickerView: UIPickerView {
     public var componentsWidthEqual: Bool = true {
         didSet {
             if existRequiredValues {
-                updateLabelFrame()
+                updateLabelsFrame()
             }
         }
     }
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.dataSource = self
-        self.delegate = self
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.dataSource = self
-        self.delegate = self
-    }
+    var labels: [UILabel] = []
     
     var existRequiredValues: Bool {
         return !components.isEmpty && rowHeight != .leastNormalMagnitude
     }
-    
-    var labels: [UILabel] = []
-    
-    let separateWidth: CGFloat = 5.0
     
     var separeteCount: Int {
         return components.count - 1
@@ -71,6 +57,20 @@ public class PickerView: UIPickerView {
     
     var componentsSidePaddingSum: CGFloat {
         return componentsWidthSum - componentsMaxContentWidthSum
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.dataSource = self
+        self.delegate = self
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.dataSource = self
+        self.delegate = self
     }
     
     func componentSidePaddingSum(of component: PickerComponent) -> CGFloat {
@@ -93,8 +93,23 @@ public class PickerView: UIPickerView {
         }
     }
     
+    func leftComponentsWidth(withComponentIndex index: Int) -> CGFloat {
+        return (0..<index).reduce(0.0) { $0 + componentWidth(of: components[$1]) }
+    }
+    
+    func labelFrame(withComponentIndex index: Int) -> CGRect {
+        let component = components[index]
+        let x = leftComponentsWidth(withComponentIndex: index)
+                + componentSidePadding(of: component)
+                + component.maxItemWidth
+                + separateWidth * CGFloat(index)
+        let y = bounds.height / 2.0 - rowHeight / 2.0
+        
+        return CGRect(x: x, y: y, width: components[index].labelNameWidth, height: rowHeight)
+    }
+    
     func setLabels() {
-        labels = components.enumerated().map { index, component in
+        labels = components.map { component in
             let label = UILabel()
             label.attributedText = component.attributedLabel
             label.textAlignment = .center
@@ -105,30 +120,10 @@ public class PickerView: UIPickerView {
         labels.forEach { addSubview($0) }
     }
     
-    func updateLabelFrame() {
+    func updateLabelsFrame() {
         components.enumerated().forEach { index, component in
             labels[index].frame = labelFrame(withComponentIndex: index)
         }
-    }
-    
-    func leftComponentsWidth(withComponentIndex index: Int) -> CGFloat {
-        var widthSum: CGFloat = 0.0
-        
-        for i in 0..<index {
-            widthSum += componentWidth(of: components[i])
-        }
-        
-        return widthSum
-    }
-    
-    func labelFrame(withComponentIndex index: Int) -> CGRect {
-        let x = leftComponentsWidth(withComponentIndex: index)
-                + componentSidePadding(of: components[index])
-                + components[index].maxItemWidth
-                + separateWidth * CGFloat(index)
-        let y = bounds.height / 2.0 - rowHeight / 2.0
-        
-        return CGRect(x: x, y: y, width: components[index].labelNameWidth, height: rowHeight)
     }
     
 }

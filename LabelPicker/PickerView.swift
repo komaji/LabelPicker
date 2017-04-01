@@ -49,31 +49,31 @@ public class PickerView: UIPickerView {
         self.delegate = self
     }
     
-    fileprivate var existRequiredValues: Bool {
+    var existRequiredValues: Bool {
         return !components.isEmpty && rowHeight != .leastNormalMagnitude
     }
     
-    fileprivate var labels: [UILabel] = []
+    var labels: [UILabel] = []
     
-    fileprivate let separateWidth: CGFloat = 5.0
+    let separateWidth: CGFloat = 5.0
     
-    fileprivate var separeteCount: Int {
+    var separeteCount: Int {
         return components.count - 1
     }
     
-    fileprivate var componentsWidthSum: CGFloat {
+    var componentsWidthSum: CGFloat {
         return bounds.width - separateWidth * CGFloat(separeteCount)
     }
     
-    fileprivate var componentsMaxContentWidthSum: CGFloat {
+    var componentsMaxContentWidthSum: CGFloat {
         return components.map { $0.maxContentWidth }.reduce(0.0, +)
     }
     
-    fileprivate var componentsSidePaddingSum: CGFloat {
+    var componentsSidePaddingSum: CGFloat {
         return componentsWidthSum - componentsMaxContentWidthSum
     }
     
-    fileprivate func componentSidePaddingSum(of component: PickerComponent) -> CGFloat {
+    func componentSidePaddingSum(of component: PickerComponent) -> CGFloat {
         if componentsWidthEqual {
             return componentWidth(of: component) - component.maxContentWidth
         } else {
@@ -81,11 +81,11 @@ public class PickerView: UIPickerView {
         }
     }
     
-    fileprivate func componentSidePadding(of component: PickerComponent) -> CGFloat {
+    func componentSidePadding(of component: PickerComponent) -> CGFloat {
         return componentSidePaddingSum(of: component) / 2.0
     }
     
-    fileprivate func componentWidth(of component: PickerComponent) -> CGFloat {
+    func componentWidth(of component: PickerComponent) -> CGFloat {
         if componentsWidthEqual {
             return componentsWidthSum / CGFloat(components.count)
         } else {
@@ -93,7 +93,7 @@ public class PickerView: UIPickerView {
         }
     }
     
-    fileprivate func setLabels() {
+    func setLabels() {
         labels = components.enumerated().map { index, component in
             let label = UILabel()
             label.attributedText = component.attributedLabel
@@ -105,13 +105,13 @@ public class PickerView: UIPickerView {
         labels.forEach { addSubview($0) }
     }
     
-    fileprivate func updateLabelFrame() {
+    func updateLabelFrame() {
         components.enumerated().forEach { index, component in
             labels[index].frame = labelFrame(withComponentIndex: index)
         }
     }
     
-    fileprivate func leftComponentsWidth(withComponentIndex index: Int) -> CGFloat {
+    func leftComponentsWidth(withComponentIndex index: Int) -> CGFloat {
         var widthSum: CGFloat = 0.0
         
         for i in 0..<index {
@@ -121,7 +121,7 @@ public class PickerView: UIPickerView {
         return widthSum
     }
     
-    fileprivate func labelFrame(withComponentIndex index: Int) -> CGRect {
+    func labelFrame(withComponentIndex index: Int) -> CGRect {
         let x = leftComponentsWidth(withComponentIndex: index)
                 + componentSidePadding(of: components[index])
                 + components[index].maxItemWidth
@@ -173,7 +173,7 @@ extension PickerView: UIPickerViewDelegate {
         return componentView
     }
     
-    private func itemLabelFrame(of component: PickerComponent) -> CGRect {
+    func itemLabelFrame(of component: PickerComponent) -> CGRect {
         return CGRect(x: componentSidePadding(of: component), y: 0.0, width: component.maxItemWidth, height: rowHeight)
     }
     

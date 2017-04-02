@@ -51,7 +51,7 @@ public class LabelPickerView: UIPickerView {
         return !components.isEmpty && rowHeight != .leastNormalMagnitude
     }
     
-    var componentsSepareteCount: Int {
+    var componentSeparateCount: Int {
         return components.count - 1
     }
     
@@ -60,7 +60,7 @@ public class LabelPickerView: UIPickerView {
     }
     
     var componentsWidthSum: CGFloat {
-        return bounds.width - componentSeparateWidth * CGFloat(componentsSepareteCount)
+        return bounds.width - componentSeparateWidth * CGFloat(componentSeparateCount)
     }
     
     var componentsMaxContentWidthSum: CGFloat {

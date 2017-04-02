@@ -13,6 +13,7 @@
 		2B10ED441E8D63030099FE46 /* LabelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED431E8D63030099FE46 /* LabelPickerView.swift */; };
 		2B10ED461E8D630D0099FE46 /* LabelPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED451E8D630D0099FE46 /* LabelPickerComponent.swift */; };
 		2B10ED481E910C3F0099FE46 /* LabelPickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED471E910C3F0099FE46 /* LabelPickerViewTests.swift */; };
+		2B10ED4A1E915D120099FE46 /* LabelPickerComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED491E915D120099FE46 /* LabelPickerComponentTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		2B10ED431E8D63030099FE46 /* LabelPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerView.swift; sourceTree = "<group>"; };
 		2B10ED451E8D630D0099FE46 /* LabelPickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerComponent.swift; sourceTree = "<group>"; };
 		2B10ED471E910C3F0099FE46 /* LabelPickerViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerViewTests.swift; sourceTree = "<group>"; };
+		2B10ED491E915D120099FE46 /* LabelPickerComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerComponentTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		2B10ECBA1E8D47860099FE46 /* LabelPickerTests */ = {
 			isa = PBXGroup;
 			children = (
+				2B10ED491E915D120099FE46 /* LabelPickerComponentTests.swift */,
 				2B10ECBB1E8D47860099FE46 /* LabelPickerTests.swift */,
 				2B10ED471E910C3F0099FE46 /* LabelPickerViewTests.swift */,
 				2B10ECBD1E8D47860099FE46 /* Info.plist */,
@@ -219,6 +222,7 @@
 			files = (
 				2B10ECBC1E8D47860099FE46 /* LabelPickerTests.swift in Sources */,
 				2B10ED481E910C3F0099FE46 /* LabelPickerViewTests.swift in Sources */,
+				2B10ED4A1E915D120099FE46 /* LabelPickerComponentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

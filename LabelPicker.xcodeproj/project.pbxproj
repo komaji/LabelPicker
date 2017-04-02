@@ -12,6 +12,7 @@
 		2B10ECBE1E8D47860099FE46 /* LabelPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B10ECB01E8D47860099FE46 /* LabelPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B10ED441E8D63030099FE46 /* LabelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED431E8D63030099FE46 /* LabelPickerView.swift */; };
 		2B10ED461E8D630D0099FE46 /* LabelPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED451E8D630D0099FE46 /* LabelPickerComponent.swift */; };
+		2B10ED481E910C3F0099FE46 /* LabelPickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED471E910C3F0099FE46 /* LabelPickerViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		2B10ECBD1E8D47860099FE46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B10ED431E8D63030099FE46 /* LabelPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerView.swift; sourceTree = "<group>"; };
 		2B10ED451E8D630D0099FE46 /* LabelPickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerComponent.swift; sourceTree = "<group>"; };
+		2B10ED471E910C3F0099FE46 /* LabelPickerViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				2B10ECBB1E8D47860099FE46 /* LabelPickerTests.swift */,
+				2B10ED471E910C3F0099FE46 /* LabelPickerViewTests.swift */,
 				2B10ECBD1E8D47860099FE46 /* Info.plist */,
 			);
 			path = LabelPickerTests;
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B10ECBC1E8D47860099FE46 /* LabelPickerTests.swift in Sources */,
+				2B10ED481E910C3F0099FE46 /* LabelPickerViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

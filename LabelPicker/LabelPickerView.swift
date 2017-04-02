@@ -129,7 +129,7 @@ public class LabelPickerView: UIPickerView {
     func setLabels() {
         labels = components.map { component in
             let label = UILabel()
-            label.attributedText = component.attributedLabel
+            label.attributedText = component.attributedLabelName
             label.textAlignment = .center
             
             return label

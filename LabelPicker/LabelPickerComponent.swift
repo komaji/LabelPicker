@@ -22,7 +22,7 @@ public struct LabelPickerComponent {
         return maxItemWidth + labelNameWidth
     }
     
-    public var attributedLabel: NSAttributedString {
+    public var attributedLabelName: NSAttributedString {
         return NSAttributedString(string: labelName, attributes: labelAttributes)
     }
     

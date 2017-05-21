@@ -10,15 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var pickerView: LabelPickerView! {
+    @IBOutlet weak var pickerFrameView1: UIView! {
         didSet {
+            let pickerView = LabelPickerView(frame: pickerFrameView1.bounds)
             pickerView.components = timeComponents
             pickerView.rowHeight = 30.0
-            pickerView.contentSeparateWidth = 5.0
+            
+            pickerFrameView1.addSubview(pickerView)
         }
     }
     
-    @IBOutlet weak var pickerFrameView: UIView!
+    @IBOutlet weak var pickerFrameView2: UIView! {
+        didSet {
+            let pickerView = LabelPickerView(frame: pickerFrameView2.bounds)
+            pickerView.components = dateComponents
+            pickerView.rowHeight = 30.0
+            pickerView.componentsWidthEqual = false
+            
+            pickerFrameView2.addSubview(pickerView)
+        }
+    }
     
     let timeComponents: [LabelPickerComponent] = {
         let hours = (1...24).map { "\($0)" }
@@ -91,17 +102,6 @@ class ViewController: UIViewController {
             ),
         ]
     }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let pickerView = LabelPickerView(frame: pickerFrameView.bounds)
-        pickerView.components = dateComponents
-        pickerView.rowHeight = 30.0
-        pickerView.componentsWidthEqual = false
-        
-        pickerFrameView.addSubview(pickerView)
-    }
     
 }
 

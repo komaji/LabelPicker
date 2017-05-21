@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,14 +27,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xki-dz-pQA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="323.5"/>
                                         <subviews>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-pa-MtO" customClass="LabelPickerView" customModule="Demo" customModuleProvider="target">
-                                                <rect key="frame" x="27.5" y="54" width="320" height="216"/>
-                                            </pickerView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nqk-XD-RfU">
+                                                <rect key="frame" x="27" y="53" width="320" height="216"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="216" id="GMp-C7-rLb"/>
+                                                    <constraint firstAttribute="width" constant="320" id="Myi-0O-bdt"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Dda-pa-MtO" firstAttribute="centerX" secondItem="xki-dz-pQA" secondAttribute="centerX" id="eBG-hu-iGm"/>
-                                            <constraint firstItem="Dda-pa-MtO" firstAttribute="centerY" secondItem="xki-dz-pQA" secondAttribute="centerY" id="eT1-hz-MPN"/>
+                                            <constraint firstItem="Nqk-XD-RfU" firstAttribute="centerX" secondItem="xki-dz-pQA" secondAttribute="centerX" id="0jW-n4-YZ2"/>
+                                            <constraint firstItem="Nqk-XD-RfU" firstAttribute="centerY" secondItem="xki-dz-pQA" secondAttribute="centerY" id="kil-rQ-XNs"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgu-nw-2cl">
@@ -53,8 +58,8 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Dda-pa-MtO" firstAttribute="width" secondItem="dEC-xs-jgl" secondAttribute="width" id="3RP-TF-wxQ"/>
-                                    <constraint firstItem="Dda-pa-MtO" firstAttribute="height" secondItem="dEC-xs-jgl" secondAttribute="height" id="DDZ-Q4-NSW"/>
+                                    <constraint firstItem="Nqk-XD-RfU" firstAttribute="height" secondItem="dEC-xs-jgl" secondAttribute="height" id="IOp-wd-olc"/>
+                                    <constraint firstItem="Nqk-XD-RfU" firstAttribute="width" secondItem="dEC-xs-jgl" secondAttribute="width" id="n2i-Yd-7L3"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -67,8 +72,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pickerFrameView" destination="dEC-xs-jgl" id="PK6-Om-q7A"/>
-                        <outlet property="pickerView" destination="Dda-pa-MtO" id="UUO-5P-W1h"/>
+                        <outlet property="pickerFrameView1" destination="Nqk-XD-RfU" id="PTg-ly-3ip"/>
+                        <outlet property="pickerFrameView2" destination="dEC-xs-jgl" id="lG8-mx-RcG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

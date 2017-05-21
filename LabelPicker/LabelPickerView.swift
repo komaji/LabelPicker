@@ -138,7 +138,7 @@ public class LabelPickerView: UIPickerView {
         labels.forEach { addSubview($0) }
     }
     
-    func updateLabelsFrame() {
+    public func updateLabelsFrame() {
         components.enumerated().forEach { index, component in
             labels[index].frame = labelFrame(withComponentIndex: index)
         }

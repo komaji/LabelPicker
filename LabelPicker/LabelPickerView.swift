@@ -45,6 +45,14 @@ public class LabelPickerView: UIPickerView {
         }
     }
     
+    override public var frame: CGRect {
+        didSet {
+            if existRequiredValues {
+                updateLabelsFrame()
+            }
+        }
+    }
+    
     var labels: [UILabel] = []
     
     var existRequiredValues: Bool {

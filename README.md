@@ -13,7 +13,7 @@ Frame of components and labels is calicurated automaticaly from your specified v
 let hours = (0...23).map { "\($0)" }
 let min = (0...59).map { "\($0)" }
 let sec = (0...59).map { "\($0)" }
-let attributes = [NSFontAttributeName:UIFont.systemFont(ofSize: 16.0)]
+let attributes: [NSAttributedStringKey: Any] = [.font: UIFont.systemFont(ofSize: 16.0)]
 let components = [
     LabelPickerComponent(items: hours, itemAttributes: attributes, maxItemWidth: 20.0, labelName: "hours", labelAttributes: attributes, labelNameWidth: 50.0),
     LabelPickerComponent(items: min, itemAttributes: attributes, maxItemWidth: 20.0, labelName: "min", labelAttributes: attributes, labelNameWidth: 30.0),

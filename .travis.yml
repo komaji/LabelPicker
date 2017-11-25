@@ -1,11 +1,11 @@
 language: objective-c
 osx_image: xcode9.1
-xcode_sdk: iphonesimulator10.0
+xcode_sdk: iphonesimulator11.1
 xcode_project: LabelPicker.xcodeproj
 xcode_scheme: LabelPickerTests
 install: gem install xcpretty
 script: xcodebuild test -project LabelPicker.xcodeproj -scheme LabelPickerTests -destination
-  "platform=iOS Simulator,name=iPhone 7" | xcpretty
+  "platform=iOS Simulator,name=iPhone 8" | xcpretty
 notifications:
   slack:
     secure: GnCPz7WS3tuiP/dZuIyM8UjzNPPYupB3t0UFbfjIGJfLWIqv6k2PHBmS5Ls7sxwC82Ut83IdaPYMi9e35Q/HZLZeYglljzPrtpK3oW60fYXbdVl0rbFmj0/Ai8yIPDvtqV9o8mHNXf7FLc9+9QJUY+XZjsAomkpeDR2UsQsRtPd1MihQ8VO5Xnmcm1+7pEUjT03Y27Ryj8EM8gaI7euVYq/w788MgDYSBNbcQfA6dHmRTEG84MSAVS22oUpIhvfWw81SDYNN6T7+octSXvrt/uLau+N21WpdrO/D5moNbGzq6TF9yOTlVPvhcntU9BXmKlVNy2+BMFXMD6r/QfujHq0vHDO7ip3Jgu8BTES6gLjWiR7EJsFHvEfORgn+g7Imprp9FTJiAgQd4FFHFmn1ETeGiynNsxL6sT4HJ3AixKPrRJ8tYNBOsjeOsR/8Ql9P5FGMZsLYaSsgVYB1u1jja0jhEYE8p8G5P5THccFT7FgZ0WJmnDPte3hunYtO42X5U0YSEQFWE3tBliYfsQul99rdv5p3ieIy/e9nYP5cHIrO5EMKCGc2uOYg635YAi10aw4Ok96bbXGx3Objqh4I6YRNRqhUOB9tTPRjPmEisEPXeCJScSvDsfY1xK0+yvqeWVcMBe4H5cnUCOAj+Hl3fpCJLAPgi1EU+zt+lVfifPk=

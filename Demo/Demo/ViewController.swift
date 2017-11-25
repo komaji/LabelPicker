@@ -35,8 +35,8 @@ class ViewController: UIViewController {
         let hours = (1...24).map { "\($0)" }
         let min = (0...60).map { "\($0)" }
         let sec = (0...60).map { "\($0)" }
-        let attributes = [
-            NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)
+        let attributes: [NSAttributedStringKey: Any] = [
+            .font: UIFont.systemFont(ofSize: 16.0)
         ]
         
         return [
@@ -71,8 +71,8 @@ class ViewController: UIViewController {
         let year = (1970...2017).map { "\($0)" }
         let month = (1...12).map { "\($0)" }
         let day = (1...31).map { "\($0)" }
-        let attributes = [
-            NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)
+        let attributes: [NSAttributedStringKey: Any] = [
+            .font: UIFont.systemFont(ofSize: 16.0)
         ]
         
         return [

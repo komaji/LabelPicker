@@ -13,10 +13,10 @@ class LabelPickerComponentTests: XCTestCase {
     
     let labelPickerComponent = LabelPickerComponent(
         items: ["1"],
-        itemAttributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)],
+        itemAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
         maxItemWidth: 10.0,
         labelName: "num",
-        labelAttributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)],
+        labelAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
         labelNameWidth: 30.0
     )
     
@@ -27,7 +27,7 @@ class LabelPickerComponentTests: XCTestCase {
     func testAttributedLabelName() {
         let attributedLabel = NSAttributedString(
             string: "num",
-            attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)]
+            attributes: [.font: UIFont.systemFont(ofSize: 16.0)]
         )
         
         XCTAssertTrue(labelPickerComponent.attributedLabelName.isEqual(to: attributedLabel))
@@ -36,7 +36,7 @@ class LabelPickerComponentTests: XCTestCase {
     func testAttributedItem() {
         let attributedItem = NSAttributedString(
             string: "1",
-            attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)]
+            attributes: [.font: UIFont.systemFont(ofSize: 16.0)]
         )
         
         XCTAssertTrue(labelPickerComponent.attributedItem(index: 0).isEqual(to: attributedItem))

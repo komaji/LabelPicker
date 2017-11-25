@@ -13,18 +13,18 @@ class LabelPickerViewTests: XCTestCase {
     
     let numLabelPickerComponent = LabelPickerComponent(
         items: ["1"],
-        itemAttributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)],
+        itemAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
         maxItemWidth: 10.0,
         labelName: "num",
-        labelAttributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)],
+        labelAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
         labelNameWidth: 30.0
     )
     let charLabelPickerComponent = LabelPickerComponent(
         items: ["a"],
-        itemAttributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)],
+        itemAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
         maxItemWidth: 10.0,
         labelName: "char",
-        labelAttributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16.0)],
+        labelAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
         labelNameWidth: 40.0
     )
     var labelPickerView: LabelPickerView!

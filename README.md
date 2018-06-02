@@ -4,7 +4,7 @@
 [![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)](https://swift.org)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
-[![License](https://img.shields.io/badge/lisence-MIT-blue.svg)](https://github.com/komaji/LabelPicker/blob/master/LICENCE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/komaji/LabelPicker/blob/master/LICENSE)
 
 LabelPicker is available to add labels for components to UIPickerView.  
 Frame of components and labels is calicurated automaticaly from your specified values of items and labels width.
@@ -55,6 +55,6 @@ Then, run the following command:
 $ carthage update
 ```
 
-## Licence
+## Lisence
 
-[MIT](https://github.com/komaji/LabelPicker/blob/master/LICENCE)
+[MIT](https://github.com/komaji/LabelPicker/blob/master/LICENSE)

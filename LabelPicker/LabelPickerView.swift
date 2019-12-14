@@ -12,6 +12,8 @@ public class LabelPickerView: UIPickerView {
     
     let componentSeparateWidth: CGFloat = 5.0
     
+    var labels: [UILabel] = []
+    
     public var components: [LabelPickerComponent] = [] {
         didSet {
             setLabels()
@@ -52,8 +54,30 @@ public class LabelPickerView: UIPickerView {
             }
         }
     }
+     
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.dataSource = self
+        self.delegate = self
+    }
     
-    var labels: [UILabel] = []
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.dataSource = self
+        self.delegate = self
+    }
+    
+    public func updateLabelsFrame() {
+        components.enumerated().forEach { index, component in
+            labels[index].frame = labelFrame(withComponentIndex: index)
+        }
+    }
+    
+}
+
+extension LabelPickerView {
     
     var existRequiredValues: Bool {
         return !components.isEmpty && rowHeight != .leastNormalMagnitude
@@ -78,20 +102,6 @@ public class LabelPickerView: UIPickerView {
     var componentsSidePaddingSum: CGFloat {
         return componentsWidthSum
                 - (componentsMaxContentWidthSum + componentsContentSeparateWidthSum)
-    }
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.dataSource = self
-        self.delegate = self
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.dataSource = self
-        self.delegate = self
     }
     
     func componentSidePaddingSum(of component: LabelPickerComponent) -> CGFloat {
@@ -144,12 +154,6 @@ public class LabelPickerView: UIPickerView {
         }
         
         labels.forEach { addSubview($0) }
-    }
-    
-    public func updateLabelsFrame() {
-        components.enumerated().forEach { index, component in
-            labels[index].frame = labelFrame(withComponentIndex: index)
-        }
     }
     
 }

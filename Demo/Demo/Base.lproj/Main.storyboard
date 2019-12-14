@@ -32,10 +32,18 @@
                                                     <constraint firstAttribute="width" constant="320" id="Myi-0O-bdt"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacing: Equal (default)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0a-VO-uze">
+                                                <rect key="frame" x="27.5" y="30.5" width="183" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Nqk-XD-RfU" firstAttribute="centerX" secondItem="xki-dz-pQA" secondAttribute="centerX" id="0jW-n4-YZ2"/>
+                                            <constraint firstItem="P0a-VO-uze" firstAttribute="leading" secondItem="Nqk-XD-RfU" secondAttribute="leading" id="NnP-KV-3JZ"/>
                                             <constraint firstItem="Nqk-XD-RfU" firstAttribute="centerY" secondItem="xki-dz-pQA" secondAttribute="centerY" id="kil-rQ-XNs"/>
+                                            <constraint firstItem="Nqk-XD-RfU" firstAttribute="top" secondItem="P0a-VO-uze" secondAttribute="bottom" constant="8" id="nYJ-ef-S2d"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgu-nw-2cl">
@@ -44,10 +52,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEC-xs-jgl">
                                                 <rect key="frame" x="27.5" y="59" width="320" height="216"/>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacing: Fill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-i6-g7b">
+                                                <rect key="frame" x="27.5" y="30.5" width="92" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="Zhs-i6-g7b" firstAttribute="leading" secondItem="dEC-xs-jgl" secondAttribute="leading" id="ENf-vT-LNS"/>
                                             <constraint firstItem="dEC-xs-jgl" firstAttribute="centerY" secondItem="vgu-nw-2cl" secondAttribute="centerY" id="NSr-1S-PwX"/>
                                             <constraint firstItem="dEC-xs-jgl" firstAttribute="centerX" secondItem="vgu-nw-2cl" secondAttribute="centerX" id="nAl-3Z-fen"/>
+                                            <constraint firstItem="dEC-xs-jgl" firstAttribute="top" secondItem="Zhs-i6-g7b" secondAttribute="bottom" constant="8" id="taP-Yg-nhl"/>
                                         </constraints>
                                     </view>
                                 </subviews>

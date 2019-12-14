@@ -144,17 +144,17 @@ extension LabelPickerView {
         let x = leftComponentsWidth(withComponentIndex: index)
                 + componentSeparateWidth * CGFloat(index)
                 + componentWidth(of: component)
-                - component.labelNameWidth
+                - component.label.width
                 - componentSidePadding(of: component)
         let y = bounds.height / 2.0 - rowHeight / 2.0
         
-        return CGRect(x: x, y: y, width: component.labelNameWidth, height: rowHeight)
+        return CGRect(x: x, y: y, width: component.label.width, height: rowHeight)
     }
     
     func setLabels() {
         labels = components.map { component in
             let label = UILabel()
-            label.attributedText = component.attributedLabelName
+            label.attributedText = component.label.attributedName
             label.textAlignment = .center
             
             return label

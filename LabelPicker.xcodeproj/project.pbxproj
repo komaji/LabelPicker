@@ -15,6 +15,7 @@
 		2B10ED481E910C3F0099FE46 /* LabelPickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED471E910C3F0099FE46 /* LabelPickerViewTests.swift */; };
 		2B10ED4A1E915D120099FE46 /* LabelPickerComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED491E915D120099FE46 /* LabelPickerComponentTests.swift */; };
 		2B2735BA23A50B1600634460 /* ItemSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2735B923A50B1600634460 /* ItemSet.swift */; };
+		2B2735C223A5102F00634460 /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2735C123A5102F00634460 /* LabelComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		2B10ED471E910C3F0099FE46 /* LabelPickerViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerViewTests.swift; sourceTree = "<group>"; };
 		2B10ED491E915D120099FE46 /* LabelPickerComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerComponentTests.swift; sourceTree = "<group>"; };
 		2B2735B923A50B1600634460 /* ItemSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSet.swift; sourceTree = "<group>"; };
+		2B2735C123A5102F00634460 /* LabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				2B10ED431E8D63030099FE46 /* LabelPickerView.swift */,
 				2B10ED451E8D630D0099FE46 /* LabelPickerComponent.swift */,
 				2B2735B923A50B1600634460 /* ItemSet.swift */,
+				2B2735C123A5102F00634460 /* LabelComponent.swift */,
 			);
 			path = LabelPicker;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B10ED441E8D63030099FE46 /* LabelPickerView.swift in Sources */,
+				2B2735C223A5102F00634460 /* LabelComponent.swift in Sources */,
 				2B10ED461E8D630D0099FE46 /* LabelPickerComponent.swift in Sources */,
 				2B2735BA23A50B1600634460 /* ItemSet.swift in Sources */,
 			);

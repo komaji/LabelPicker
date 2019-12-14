@@ -10,16 +10,16 @@ import UIKit
 
 public struct LabelPickerComponent {
     
-    public let itemSet: ItemSet
+    public let items: ItemsComponent
     public let label: LabelComponent
     
-    public init(itemSet: ItemSet, label: LabelComponent) {
-        self.itemSet = itemSet
+    public init(items: ItemsComponent, label: LabelComponent) {
+        self.items = items
         self.label = label
     }
     
     public func attributedItem(index: Int) -> NSAttributedString {
-        return NSAttributedString(string: itemSet.items[index], attributes: itemSet.attributes)
+        return NSAttributedString(string: items.items[index], attributes: items.attributes)
     }
     
 }
@@ -27,7 +27,7 @@ public struct LabelPickerComponent {
 extension LabelPickerComponent {
     
     var maxContentWidth: CGFloat {
-        return itemSet.maxWidth + label.width
+        return items.maxWidth + label.width
     }
 
 }

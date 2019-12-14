@@ -1,5 +1,5 @@
 //
-//  ItemSet.swift
+//  ItemsComponent.swift
 //  LabelPicker
 //
 //  Created by komaji on 2019/12/14.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-public struct ItemSet {
+public struct ItemsComponent {
+    
     public let items: [String]
     public let attributes: [NSAttributedStringKey: Any]
     public let maxWidth: CGFloat
+    
 }

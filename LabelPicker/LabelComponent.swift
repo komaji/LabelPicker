@@ -11,7 +11,7 @@ import UIKit
 public struct LabelComponent {
     
     public let name: String
-    public let attributes: [NSAttributedStringKey: Any]
+    public let attributes: [NSAttributedString.Key: Any]
     public let width: CGFloat
     
     var attributedName: NSAttributedString {

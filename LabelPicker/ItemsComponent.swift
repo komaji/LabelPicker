@@ -11,7 +11,7 @@ import UIKit
 public struct ItemsComponent {
     
     public let items: [String]
-    public let attributes: [NSAttributedStringKey: Any]
+    public let attributes: [NSAttributedString.Key: Any]
     public let maxWidth: CGFloat
     
 }

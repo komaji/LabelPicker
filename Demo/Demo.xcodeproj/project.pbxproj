@@ -206,19 +206,20 @@
 					2B10ECCF1E8D485F0099FE46 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = CBSJ3QK7A2;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 					2B10ECE31E8D48600099FE46 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = CBSJ3QK7A2;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2B10ECCF1E8D485F0099FE46;
 					};
 					2B10ECEE1E8D48600099FE46 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = CBSJ3QK7A2;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2B10ECCF1E8D485F0099FE46;
 					};
@@ -457,7 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -471,7 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -486,7 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 			};
 			name = Debug;
@@ -502,7 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 			};
 			name = Release;
@@ -517,7 +518,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.DemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Demo;
 			};
 			name = Debug;
@@ -532,7 +533,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.DemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Demo;
 			};
 			name = Release;

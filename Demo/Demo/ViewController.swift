@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         let year = (1970...2017).map { "\($0)" }
         let month = (1...12).map { "\($0)" }
         let day = (1...31).map { "\($0)" }
-        let attributes: [NSAttributedStringKey: Any] = [
+        let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 16.0)
         ]
         

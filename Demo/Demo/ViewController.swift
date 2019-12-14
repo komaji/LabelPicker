@@ -39,32 +39,12 @@ class ViewController: UIViewController {
             .font: UIFont.systemFont(ofSize: 16.0)
         ]
         
-        return [
-            LabelPickerComponent(
-                items: year,
-                itemAttributes: attributes,
-                maxItemWidth: 40.0,
-                labelName: "year",
-                labelAttributes: attributes,
-                labelNameWidth: 40.0
-            ),
-            LabelPickerComponent(
-                items: month,
-                itemAttributes: attributes,
-                maxItemWidth: 20.0,
-                labelName: "month",
-                labelAttributes: attributes,
-                labelNameWidth: 50.0
-            ),
-            LabelPickerComponent(
-                items: day,
-                itemAttributes: attributes,
-                maxItemWidth: 20.0,
-                labelName: "day",
-                labelAttributes: attributes,
-                labelNameWidth: 30.0
-            ),
-        ]
+        let itemsComponents = [(year, 40.0), (month, 20.0), (day, 20.0)]
+            .map { ItemsComponent(items: $0, attributes: attributes, maxWidth: $1) }
+        let labelComponents = [("year", 40.0), ("month", 50.0), ("day", 30.0)]
+            .map { LabelComponent(name: $0, attributes: attributes, width: $1) }
+        
+        return zip(itemsComponents, labelComponents).map(LabelPickerComponent.init)
     }()
     
 }

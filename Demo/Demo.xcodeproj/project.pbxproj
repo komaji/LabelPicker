@@ -16,6 +16,8 @@
 		2B10ECF41E8D48600099FE46 /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ECF31E8D48600099FE46 /* DemoUITests.swift */; };
 		2B10ED021E8D49210099FE46 /* LabelPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED011E8D49210099FE46 /* LabelPickerComponent.swift */; };
 		2B10ED041E8D4C260099FE46 /* LabelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED031E8D4C260099FE46 /* LabelPickerView.swift */; };
+		2B2735C423A5121E00634460 /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2735C323A5121E00634460 /* LabelComponent.swift */; };
+		2B2735C623A5139C00634460 /* ItemsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2735C523A5139C00634460 /* ItemsComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		2B10ECF51E8D48600099FE46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B10ED011E8D49210099FE46 /* LabelPickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelPickerComponent.swift; path = ../../LabelPicker/LabelPickerComponent.swift; sourceTree = "<group>"; };
 		2B10ED031E8D4C260099FE46 /* LabelPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelPickerView.swift; path = ../../LabelPicker/LabelPickerView.swift; sourceTree = "<group>"; };
+		2B2735C323A5121E00634460 /* LabelComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelComponent.swift; path = ../../LabelPicker/LabelComponent.swift; sourceTree = "<group>"; };
+		2B2735C523A5139C00634460 /* ItemsComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsComponent.swift; path = ../../LabelPicker/ItemsComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				2B10ECDC1E8D485F0099FE46 /* LaunchScreen.storyboard */,
 				2B10ECDF1E8D485F0099FE46 /* Info.plist */,
 				2B10ED011E8D49210099FE46 /* LabelPickerComponent.swift */,
+				2B2735C523A5139C00634460 /* ItemsComponent.swift */,
+				2B2735C323A5121E00634460 /* LabelComponent.swift */,
 				2B10ED031E8D4C260099FE46 /* LabelPickerView.swift */,
 			);
 			path = Demo;
@@ -223,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -271,6 +278,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B10ED041E8D4C260099FE46 /* LabelPickerView.swift in Sources */,
+				2B2735C423A5121E00634460 /* LabelComponent.swift in Sources */,
+				2B2735C623A5139C00634460 /* ItemsComponent.swift in Sources */,
 				2B10ECD61E8D485F0099FE46 /* ViewController.swift in Sources */,
 				2B10ED021E8D49210099FE46 /* LabelPickerComponent.swift in Sources */,
 				2B10ECD41E8D485F0099FE46 /* AppDelegate.swift in Sources */,

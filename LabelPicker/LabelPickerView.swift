@@ -172,7 +172,7 @@ extension LabelPickerView: UIPickerViewDataSource {
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return components[component].items.count
+        return components[component].itemSet.items.count
     }
     
     public func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -206,7 +206,12 @@ extension LabelPickerView: UIPickerViewDelegate {
     }
     
     func itemLabelFrame(of component: LabelPickerComponent) -> CGRect {
-        return CGRect(x: componentSidePadding(of: component), y: 0.0, width: component.maxItemWidth, height: rowHeight)
+        return CGRect(
+            x: componentSidePadding(of: component),
+            y: 0.0,
+            width: component.itemSet.maxWidth,
+            height: rowHeight
+        )
     }
     
 }

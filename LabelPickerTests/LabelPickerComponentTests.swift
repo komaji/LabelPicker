@@ -12,12 +12,16 @@ import XCTest
 class LabelPickerComponentTests: XCTestCase {
     
     let labelPickerComponent = LabelPickerComponent(
-        items: ["1"],
-        itemAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
-        maxItemWidth: 10.0,
-        labelName: "num",
-        labelAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
-        labelNameWidth: 30.0
+        items: ItemsComponent(
+            items: ["1"],
+            attributes: [.font: UIFont.systemFont(ofSize: 16.0)],
+            maxWidth: 10.0
+        ),
+        label: LabelComponent(
+            name: "num",
+            attributes: [.font: UIFont.systemFont(ofSize: 16.0)],
+            width: 30.0
+        )
     )
     
     func testMaxContentWidth() {
@@ -30,7 +34,7 @@ class LabelPickerComponentTests: XCTestCase {
             attributes: [.font: UIFont.systemFont(ofSize: 16.0)]
         )
         
-        XCTAssertTrue(labelPickerComponent.attributedLabelName.isEqual(to: attributedLabel))
+        XCTAssertTrue(labelPickerComponent.label.attributedName.isEqual(to: attributedLabel))
     }
     
     func testAttributedItem() {

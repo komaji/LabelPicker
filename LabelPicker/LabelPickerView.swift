@@ -10,7 +10,14 @@ import UIKit
 
 public class LabelPickerView: UIPickerView {
     
+    public enum Spacing {
+        case equal
+        case fill
+    }
+    
     let componentSeparateWidth: CGFloat = 5.0
+    
+    var labels: [UILabel] = []
     
     public var components: [LabelPickerComponent] = [] {
         didSet {
@@ -29,7 +36,7 @@ public class LabelPickerView: UIPickerView {
         }
     }
     
-    public var componentsWidthEqual: Bool = true {
+    public var spacing: Spacing = .equal {
         didSet {
             if existRequiredValues {
                 updateLabelsFrame()
@@ -52,8 +59,30 @@ public class LabelPickerView: UIPickerView {
             }
         }
     }
+     
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.dataSource = self
+        self.delegate = self
+    }
     
-    var labels: [UILabel] = []
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.dataSource = self
+        self.delegate = self
+    }
+    
+    public func updateLabelsFrame() {
+        components.enumerated().forEach { index, component in
+            labels[index].frame = labelFrame(withComponentIndex: index)
+        }
+    }
+    
+}
+
+extension LabelPickerView {
     
     var existRequiredValues: Bool {
         return !components.isEmpty && rowHeight != .leastNormalMagnitude
@@ -80,26 +109,13 @@ public class LabelPickerView: UIPickerView {
                 - (componentsMaxContentWidthSum + componentsContentSeparateWidthSum)
     }
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.dataSource = self
-        self.delegate = self
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.dataSource = self
-        self.delegate = self
-    }
-    
     func componentSidePaddingSum(of component: LabelPickerComponent) -> CGFloat {
-        if componentsWidthEqual {
+        switch spacing {
+        case .equal:
             return componentWidth(of: component)
                     - component.maxContentWidth
                     - contentSeparateWidth
-        } else {
+        case .fill:
             return componentsSidePaddingSum / CGFloat(components.count)
         }
     }
@@ -109,9 +125,10 @@ public class LabelPickerView: UIPickerView {
     }
     
     func componentWidth(of component: LabelPickerComponent) -> CGFloat {
-        if componentsWidthEqual {
+        switch spacing {
+        case .equal:
             return componentsWidthSum / CGFloat(components.count)
-        } else {
+        case .fill:
             return component.maxContentWidth
                     + componentSidePaddingSum(of: component)
                     + contentSeparateWidth
@@ -127,29 +144,23 @@ public class LabelPickerView: UIPickerView {
         let x = leftComponentsWidth(withComponentIndex: index)
                 + componentSeparateWidth * CGFloat(index)
                 + componentWidth(of: component)
-                - component.labelNameWidth
+                - component.label.width
                 - componentSidePadding(of: component)
         let y = bounds.height / 2.0 - rowHeight / 2.0
         
-        return CGRect(x: x, y: y, width: component.labelNameWidth, height: rowHeight)
+        return CGRect(x: x, y: y, width: component.label.width, height: rowHeight)
     }
     
     func setLabels() {
         labels = components.map { component in
             let label = UILabel()
-            label.attributedText = component.attributedLabelName
+            label.attributedText = component.label.attributedName
             label.textAlignment = .center
             
             return label
         }
         
         labels.forEach { addSubview($0) }
-    }
-    
-    public func updateLabelsFrame() {
-        components.enumerated().forEach { index, component in
-            labels[index].frame = labelFrame(withComponentIndex: index)
-        }
     }
     
 }
@@ -161,7 +172,7 @@ extension LabelPickerView: UIPickerViewDataSource {
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return components[component].items.count
+        return components[component].items.items.count
     }
     
     public func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -195,7 +206,12 @@ extension LabelPickerView: UIPickerViewDelegate {
     }
     
     func itemLabelFrame(of component: LabelPickerComponent) -> CGRect {
-        return CGRect(x: componentSidePadding(of: component), y: 0.0, width: component.maxItemWidth, height: rowHeight)
+        return CGRect(
+            x: componentSidePadding(of: component),
+            y: 0.0,
+            width: component.items.maxWidth,
+            height: rowHeight
+        )
     }
     
 }

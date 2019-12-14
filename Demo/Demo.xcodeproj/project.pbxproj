@@ -16,6 +16,8 @@
 		2B10ECF41E8D48600099FE46 /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ECF31E8D48600099FE46 /* DemoUITests.swift */; };
 		2B10ED021E8D49210099FE46 /* LabelPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED011E8D49210099FE46 /* LabelPickerComponent.swift */; };
 		2B10ED041E8D4C260099FE46 /* LabelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B10ED031E8D4C260099FE46 /* LabelPickerView.swift */; };
+		2B2735C423A5121E00634460 /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2735C323A5121E00634460 /* LabelComponent.swift */; };
+		2B2735C623A5139C00634460 /* ItemsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2735C523A5139C00634460 /* ItemsComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		2B10ECF51E8D48600099FE46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B10ED011E8D49210099FE46 /* LabelPickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelPickerComponent.swift; path = ../../LabelPicker/LabelPickerComponent.swift; sourceTree = "<group>"; };
 		2B10ED031E8D4C260099FE46 /* LabelPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelPickerView.swift; path = ../../LabelPicker/LabelPickerView.swift; sourceTree = "<group>"; };
+		2B2735C323A5121E00634460 /* LabelComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelComponent.swift; path = ../../LabelPicker/LabelComponent.swift; sourceTree = "<group>"; };
+		2B2735C523A5139C00634460 /* ItemsComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsComponent.swift; path = ../../LabelPicker/ItemsComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				2B10ECDC1E8D485F0099FE46 /* LaunchScreen.storyboard */,
 				2B10ECDF1E8D485F0099FE46 /* Info.plist */,
 				2B10ED011E8D49210099FE46 /* LabelPickerComponent.swift */,
+				2B2735C523A5139C00634460 /* ItemsComponent.swift */,
+				2B2735C323A5121E00634460 /* LabelComponent.swift */,
 				2B10ED031E8D4C260099FE46 /* LabelPickerView.swift */,
 			);
 			path = Demo;
@@ -194,25 +200,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = komaji;
 				TargetAttributes = {
 					2B10ECCF1E8D485F0099FE46 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = CBSJ3QK7A2;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 					2B10ECE31E8D48600099FE46 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = CBSJ3QK7A2;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2B10ECCF1E8D485F0099FE46;
 					};
 					2B10ECEE1E8D48600099FE46 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = CBSJ3QK7A2;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2B10ECCF1E8D485F0099FE46;
 					};
@@ -220,7 +227,7 @@
 			};
 			buildConfigurationList = 2B10ECCB1E8D485F0099FE46 /* Build configuration list for PBXProject "Demo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -271,6 +278,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B10ED041E8D4C260099FE46 /* LabelPickerView.swift in Sources */,
+				2B2735C423A5121E00634460 /* LabelComponent.swift in Sources */,
+				2B2735C623A5139C00634460 /* ItemsComponent.swift in Sources */,
 				2B10ECD61E8D485F0099FE46 /* ViewController.swift in Sources */,
 				2B10ED021E8D49210099FE46 /* LabelPickerComponent.swift in Sources */,
 				2B10ECD41E8D485F0099FE46 /* AppDelegate.swift in Sources */,
@@ -332,6 +341,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -341,6 +351,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -348,6 +359,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -388,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -397,6 +410,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -404,6 +418,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -443,7 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -457,7 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -472,7 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 			};
 			name = Debug;
@@ -488,7 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 			};
 			name = Release;
@@ -503,7 +518,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.DemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Demo;
 			};
 			name = Debug;
@@ -518,7 +533,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.DemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Demo;
 			};
 			name = Release;

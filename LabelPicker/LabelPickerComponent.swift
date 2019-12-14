@@ -6,37 +6,23 @@
 //  Copyright © 2017年 komaji. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 public struct LabelPickerComponent {
     
-    public let items: [String]
-    public let itemAttributes: [NSAttributedStringKey: Any]
-    public let maxItemWidth: CGFloat
-    public let labelName: String
-    public let labelAttributes: [NSAttributedStringKey: Any]
-    public let labelNameWidth: CGFloat
-    
-    public var maxContentWidth: CGFloat {
-        return maxItemWidth + labelNameWidth
-    }
-    
-    public var attributedLabelName: NSAttributedString {
-        return NSAttributedString(string: labelName, attributes: labelAttributes)
-    }
-    
-    public init(items: [String], itemAttributes: [NSAttributedStringKey: Any], maxItemWidth: CGFloat, labelName: String, labelAttributes: [NSAttributedStringKey: Any], labelNameWidth: CGFloat) {
-        self.items = items
-        self.itemAttributes = itemAttributes
-        self.maxItemWidth = maxItemWidth
-        self.labelName = labelName
-        self.labelAttributes = labelAttributes
-        self.labelNameWidth = labelNameWidth
-    }
+    public let items: ItemsComponent
+    public let label: LabelComponent
     
     public func attributedItem(index: Int) -> NSAttributedString {
-        return NSAttributedString(string: items[index], attributes: itemAttributes)
+        return NSAttributedString(string: items.items[index], attributes: items.attributes)
     }
     
+}
+
+extension LabelPickerComponent {
+    
+    var maxContentWidth: CGFloat {
+        return items.maxWidth + label.width
+    }
+
 }

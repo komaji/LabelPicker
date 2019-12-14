@@ -12,20 +12,28 @@ import XCTest
 class LabelPickerViewTests: XCTestCase {
     
     let numLabelPickerComponent = LabelPickerComponent(
-        items: ["1"],
-        itemAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
-        maxItemWidth: 10.0,
-        labelName: "num",
-        labelAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
-        labelNameWidth: 30.0
+        items: ItemsComponent(
+            items: ["1"],
+            attributes: [.font: UIFont.systemFont(ofSize: 16.0)],
+            maxWidth: 10.0
+        ),
+        label: LabelComponent(
+            name: "num",
+            attributes: [.font: UIFont.systemFont(ofSize: 16.0)],
+            width: 30.0
+        )
     )
     let charLabelPickerComponent = LabelPickerComponent(
-        items: ["a"],
-        itemAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
-        maxItemWidth: 10.0,
-        labelName: "char",
-        labelAttributes: [.font: UIFont.systemFont(ofSize: 16.0)],
-        labelNameWidth: 40.0
+        items: ItemsComponent(
+            items: ["a"],
+            attributes: [.font: UIFont.systemFont(ofSize: 16.0)],
+            maxWidth: 10.0
+        ),
+        label: LabelComponent(
+            name: "char",
+            attributes: [.font: UIFont.systemFont(ofSize: 16.0)],
+            width: 40.0
+        )
     )
     var labelPickerView: LabelPickerView!
     
@@ -108,7 +116,7 @@ class LabelPickerViewTests: XCTestCase {
         XCTAssertEqual(labelPickerView.componentSidePaddingSum(of: numLabelPickerComponent), 60.0)
         XCTAssertEqual(labelPickerView.componentSidePaddingSum(of: charLabelPickerComponent), 50.0)
         
-        labelPickerView.componentsWidthEqual = false
+        labelPickerView.spacing = .fill
         
         XCTAssertEqual(labelPickerView.componentSidePaddingSum(of: numLabelPickerComponent), 55.0)
         XCTAssertEqual(labelPickerView.componentSidePaddingSum(of: charLabelPickerComponent), 55.0)
@@ -127,7 +135,7 @@ class LabelPickerViewTests: XCTestCase {
         XCTAssertEqual(labelPickerView.componentWidth(of: numLabelPickerComponent), 100.0)
         XCTAssertEqual(labelPickerView.componentWidth(of: charLabelPickerComponent), 100.0)
         
-        labelPickerView.componentsWidthEqual = false
+        labelPickerView.spacing = .fill
         
         XCTAssertEqual(labelPickerView.componentWidth(of: numLabelPickerComponent), 95.0)
         XCTAssertEqual(labelPickerView.componentWidth(of: charLabelPickerComponent), 105.0)

@@ -25,7 +25,7 @@ class ViewController: UIViewController {
             let pickerView = LabelPickerView(frame: pickerFrameView2.bounds)
             pickerView.components = dateComponents
             pickerView.rowHeight = 30.0
-            pickerView.componentsWidthEqual = false
+            pickerView.spacing = .fill
             
             pickerFrameView2.addSubview(pickerView)
         }

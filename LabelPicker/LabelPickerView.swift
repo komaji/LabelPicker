@@ -10,6 +10,11 @@ import UIKit
 
 public class LabelPickerView: UIPickerView {
     
+    public enum Spacing {
+        case equal
+        case fill
+    }
+    
     let componentSeparateWidth: CGFloat = 5.0
     
     var labels: [UILabel] = []
@@ -31,7 +36,7 @@ public class LabelPickerView: UIPickerView {
         }
     }
     
-    public var componentsWidthEqual: Bool = true {
+    public var spacing: Spacing = .equal {
         didSet {
             if existRequiredValues {
                 updateLabelsFrame()
@@ -105,11 +110,12 @@ extension LabelPickerView {
     }
     
     func componentSidePaddingSum(of component: LabelPickerComponent) -> CGFloat {
-        if componentsWidthEqual {
+        switch spacing {
+        case .equal:
             return componentWidth(of: component)
                     - component.maxContentWidth
                     - contentSeparateWidth
-        } else {
+        case .fill:
             return componentsSidePaddingSum / CGFloat(components.count)
         }
     }
@@ -119,9 +125,10 @@ extension LabelPickerView {
     }
     
     func componentWidth(of component: LabelPickerComponent) -> CGFloat {
-        if componentsWidthEqual {
+        switch spacing {
+        case .equal:
             return componentsWidthSum / CGFloat(components.count)
-        } else {
+        case .fill:
             return component.maxContentWidth
                     + componentSidePaddingSum(of: component)
                     + contentSeparateWidth

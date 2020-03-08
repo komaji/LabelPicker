@@ -80,6 +80,20 @@ public class LabelPickerView: UIPickerView {
         }
     }
     
+    public func updateLabelName(to name: String, atIndex index: Int) {
+        guard components.indices ~= index else { return }
+        
+        let target = components[index]
+        let updatedLabel = LabelComponent(
+            name: name,
+            attributes: target.label.attributes,
+            width: target.label.width
+        )
+        let updated = LabelPickerComponent(items: target.items, label: updatedLabel)
+        
+        components[index] = updated
+    }
+    
 }
 
 extension LabelPickerView {
@@ -159,7 +173,7 @@ extension LabelPickerView {
             
             return label
         }
-        
+        subviews.filter { $0 is UILabel }.forEach { $0.removeFromSuperview() }
         labels.forEach { addSubview($0) }
     }
     

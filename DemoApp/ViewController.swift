@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LabelPicker
 
 class ViewController: UIViewController {
     

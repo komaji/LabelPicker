@@ -14,4 +14,10 @@ public struct ItemsComponent {
     public let attributes: [NSAttributedString.Key: Any]
     public let maxWidth: CGFloat
     
+    public init(items: [String], attributes: [NSAttributedString.Key: Any], maxWidth: CGFloat) {
+        self.items = items
+        self.attributes = attributes
+        self.maxWidth = maxWidth
+    }
+    
 }

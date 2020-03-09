@@ -18,4 +18,10 @@ public struct LabelComponent {
         return NSAttributedString(string: name, attributes: attributes)
     }
     
+    public init(name: String, attributes: [NSAttributedString.Key: Any], width: CGFloat) {
+        self.name = name
+        self.attributes = attributes
+        self.width = width
+    }
+    
 }

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
             let pickerView = LabelPickerView(frame: pickerFrameView1.bounds)
             pickerView.components = dateComponents
             pickerView.rowHeight = 30.0
+            pickerView.labelPickerDelegate = self
             
             pickerFrameView1.addSubview(pickerView)
         }
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
             pickerView.components = dateComponents
             pickerView.rowHeight = 30.0
             pickerView.spacing = .fill
+            pickerView.labelPickerDelegate = self
             
             pickerFrameView2.addSubview(pickerView)
         }
@@ -50,3 +52,14 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: LabelPickerViewDelegate {
+    
+    func didSelect(item: String, inComponent component: Int, currentItems: [String]) {
+        print(
+            "didSelectItem:", item,
+            "inComponent:", component,
+            "currentItems:", currentItems
+        )
+    }
+    
+}

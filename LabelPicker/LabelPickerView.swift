@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol LabelPickerViewDelegate: AnyObject {
+public protocol LabelPickerDelegate: AnyObject {
     func didSelect(item: String, inComponent component: Int, currentItems: [String])
 }
 
@@ -23,7 +23,7 @@ public class LabelPickerView: UIPickerView {
     
     var labels: [UILabel] = []
     
-    public weak var labelPickerDelegate: LabelPickerViewDelegate?
+    public weak var labelPickerDelegate: LabelPickerDelegate?
     
     public var components: [LabelPickerComponent] = [] {
         didSet {

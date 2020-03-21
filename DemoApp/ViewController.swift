@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: LabelPickerViewDelegate {
+extension ViewController: LabelPickerDelegate {
     
     func didSelect(item: String, inComponent component: Int, currentItems: [String]) {
         print(

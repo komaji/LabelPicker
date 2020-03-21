@@ -8,6 +8,10 @@
 
 import UIKit
 
+public protocol LabelPickerViewDelegate: AnyObject {
+    func didSelect(item: String, inComponent component: Int, currentItems: [String])
+}
+
 public class LabelPickerView: UIPickerView {
     
     public enum Spacing {
@@ -18,6 +22,8 @@ public class LabelPickerView: UIPickerView {
     let componentSeparateWidth: CGFloat = 5.0
     
     var labels: [UILabel] = []
+    
+    public weak var labelPickerDelegate: LabelPickerViewDelegate?
     
     public var components: [LabelPickerComponent] = [] {
         didSet {
@@ -217,6 +223,19 @@ extension LabelPickerView: UIPickerViewDelegate {
         componentView.addSubview(itemLabel)
         
         return componentView
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let currentItems: [String] = components.enumerated().map { offset, _component in
+            let row = pickerView.selectedRow(inComponent: offset)
+            return _component.items.items[row]
+        }
+        
+        labelPickerDelegate?.didSelect(
+            item: currentItems[component],
+            inComponent: component,
+            currentItems: currentItems
+        )
     }
     
     func itemLabelFrame(of component: LabelPickerComponent) -> CGRect {

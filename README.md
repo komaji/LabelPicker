@@ -4,9 +4,10 @@
 [![Language](https://img.shields.io/badge/language-Swift%205.0-orange.svg)](https://swift.org)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-4BC51D)](https://swift.org/package-manager/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/komaji/LabelPicker/blob/master/LICENSE)
 
-LabelPicker is available to add labels for components to UIPickerView.  
+LabelPicker is available to add labels for components to UIPickerView.
 Frame of components and labels is calicurated automaticaly from your specified values of items and labels width.
 
 <a href="https://gyazo.com/41ae851edca077bd87f2cea8422781ba"><img src="https://i.gyazo.com/41ae851edca077bd87f2cea8422781ba.png" alt="https://gyazo.com/41ae851edca077bd87f2cea8422781ba" width="375"/></a>
@@ -41,6 +42,16 @@ See [Demo](https://github.com/komaji/LabelPicker/tree/master/Demo) for more info
 - Swift 4.0
 
 ## Installation
+
+### [Swift Package Manager](https://swift.org/package-manager/)
+
+Specify LabelPicker as a dependency of your Package.swift.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/komaji/LabelPicker.git", .upToNextMajor(from: "VERSION_NUMBER")),
+],
+```
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 

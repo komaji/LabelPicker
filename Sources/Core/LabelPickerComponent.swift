@@ -6,6 +6,7 @@
 //  Copyright © 2017年 komaji. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public struct LabelPickerComponent {
@@ -27,3 +28,4 @@ public struct LabelPickerComponent {
     }
 
 }
+#endif

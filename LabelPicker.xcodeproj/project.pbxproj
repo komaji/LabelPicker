@@ -47,6 +47,7 @@
 		2B10ED491E915D120099FE46 /* LabelPickerComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelPickerComponentTests.swift; sourceTree = "<group>"; };
 		2B2735B923A50B1600634460 /* ItemsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsComponent.swift; sourceTree = "<group>"; };
 		2B2735C123A5102F00634460 /* LabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponent.swift; sourceTree = "<group>"; };
+		2B435038289BD87800BD36C7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2BDA7F2824166D8500AAA108 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BDA7F2A24166D8500AAA108 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BDA7F2C24166D8500AAA108 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,8 +87,9 @@
 		2B10ECA31E8D47860099FE46 = {
 			isa = PBXGroup;
 			children = (
-				2B10ECAF1E8D47860099FE46 /* LabelPicker */,
-				2B10ECBA1E8D47860099FE46 /* LabelPickerTests */,
+				2B435038289BD87800BD36C7 /* Package.swift */,
+				2B10ECAF1E8D47860099FE46 /* Sources */,
+				2B10ECBA1E8D47860099FE46 /* Tests */,
 				2BDA7F2924166D8500AAA108 /* DemoApp */,
 				2B10ECAE1E8D47860099FE46 /* Products */,
 			);
@@ -103,28 +105,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B10ECAF1E8D47860099FE46 /* LabelPicker */ = {
+		2B10ECAF1E8D47860099FE46 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2B435039289BD8D700BD36C7 /* Core */,
 				2B10ECB01E8D47860099FE46 /* LabelPicker.h */,
 				2B10ECB11E8D47860099FE46 /* Info.plist */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2B10ECBA1E8D47860099FE46 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2B43503A289BD8F400BD36C7 /* CoreTests */,
+				2B10ECBD1E8D47860099FE46 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		2B435039289BD8D700BD36C7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
 				2B10ED431E8D63030099FE46 /* LabelPickerView.swift */,
 				2B10ED451E8D630D0099FE46 /* LabelPickerComponent.swift */,
 				2B2735B923A50B1600634460 /* ItemsComponent.swift */,
 				2B2735C123A5102F00634460 /* LabelComponent.swift */,
 			);
-			path = LabelPicker;
+			path = Core;
 			sourceTree = "<group>";
 		};
-		2B10ECBA1E8D47860099FE46 /* LabelPickerTests */ = {
+		2B43503A289BD8F400BD36C7 /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
 				2B10ED491E915D120099FE46 /* LabelPickerComponentTests.swift */,
 				2B10ECBB1E8D47860099FE46 /* LabelPickerTests.swift */,
 				2B10ED471E910C3F0099FE46 /* LabelPickerViewTests.swift */,
-				2B10ECBD1E8D47860099FE46 /* Info.plist */,
 			);
-			path = LabelPickerTests;
+			path = CoreTests;
 			sourceTree = "<group>";
 		};
 		2BDA7F2924166D8500AAA108 /* DemoApp */ = {
@@ -472,7 +490,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LabelPicker/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.LabelPicker;
@@ -494,7 +512,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LabelPicker/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.LabelPicker;
@@ -510,7 +528,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = CBSJ3QK7A2;
-				INFOPLIST_FILE = LabelPickerTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.LabelPickerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -524,7 +542,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = CBSJ3QK7A2;
-				INFOPLIST_FILE = LabelPickerTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = komaji.io.LabelPickerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

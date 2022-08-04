@@ -6,6 +6,7 @@
 //  Copyright © 2017年 komaji. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public protocol LabelPickerDelegate: AnyObject {
@@ -248,3 +249,4 @@ extension LabelPickerView: UIPickerViewDelegate {
     }
     
 }
+#endif

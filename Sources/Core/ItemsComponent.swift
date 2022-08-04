@@ -6,6 +6,7 @@
 //  Copyright © 2019 komaji. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public struct ItemsComponent {
@@ -21,3 +22,4 @@ public struct ItemsComponent {
     }
     
 }
+#endif

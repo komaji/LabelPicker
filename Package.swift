@@ -9,17 +9,17 @@ let package = Package(
     products: [
         .library(
             name: "LabelPicker",
-            targets: ["Core"]
+            targets: ["LabelPicker"]
         ),
     ],
     targets: [
         .target(
-            name: "Core",
+            name: "LabelPicker",
             dependencies: []
         ),
         .testTarget(
-            name: "CoreTests",
-            dependencies: ["Core"]
+            name: "LabelPickerTests",
+            dependencies: ["LabelPicker"]
         ),
     ]
 )

@@ -108,7 +108,7 @@
 		2B10ECAF1E8D47860099FE46 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2B435039289BD8D700BD36C7 /* Core */,
+				2B435039289BD8D700BD36C7 /* LabelPicker */,
 				2B10ECB01E8D47860099FE46 /* LabelPicker.h */,
 				2B10ECB11E8D47860099FE46 /* Info.plist */,
 			);
@@ -118,13 +118,13 @@
 		2B10ECBA1E8D47860099FE46 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2B43503A289BD8F400BD36C7 /* CoreTests */,
+				2B43503A289BD8F400BD36C7 /* LabelPickerTests */,
 				2B10ECBD1E8D47860099FE46 /* Info.plist */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		2B435039289BD8D700BD36C7 /* Core */ = {
+		2B435039289BD8D700BD36C7 /* LabelPicker */ = {
 			isa = PBXGroup;
 			children = (
 				2B10ED431E8D63030099FE46 /* LabelPickerView.swift */,
@@ -132,17 +132,17 @@
 				2B2735B923A50B1600634460 /* ItemsComponent.swift */,
 				2B2735C123A5102F00634460 /* LabelComponent.swift */,
 			);
-			path = Core;
+			path = LabelPicker;
 			sourceTree = "<group>";
 		};
-		2B43503A289BD8F400BD36C7 /* CoreTests */ = {
+		2B43503A289BD8F400BD36C7 /* LabelPickerTests */ = {
 			isa = PBXGroup;
 			children = (
 				2B10ED491E915D120099FE46 /* LabelPickerComponentTests.swift */,
 				2B10ECBB1E8D47860099FE46 /* LabelPickerTests.swift */,
 				2B10ED471E910C3F0099FE46 /* LabelPickerViewTests.swift */,
 			);
-			path = CoreTests;
+			path = LabelPickerTests;
 			sourceTree = "<group>";
 		};
 		2BDA7F2924166D8500AAA108 /* DemoApp */ = {
